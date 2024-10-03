@@ -6,7 +6,7 @@ use which::which;
 
 static APP_VERSION: &str = "0.1.2";
 
-// tested with: cargo run tere ls node npm nope git java rustc rustup cargo non_existent gcc has-rs
+// tested with: cargo run tere ls node npm nope git java rustc rustup cargo non_existent gcc has-rs pip py python nano ffmpeg wget curl upx
 fn main() {
 	let args: Vec<String> = env::args().collect();
 	
