@@ -54,7 +54,7 @@ fn get_version(app: &str) -> String {
 	lazy_static! { static ref RE: Regex = Regex::new(r"(?i)(\d+\.|v){1,3}\d+").unwrap(); }
 
 	for arg in ["--version", "-version", "-V", "-v", "version"] {
-		let output = try_get_version(resolved_path.to_string(), arg);
+		let output = try_get_output(resolved_path.to_string(), arg);
 
 		// println!("{}", output);
 
@@ -79,7 +79,7 @@ fn get_version(app: &str) -> String {
 	}
 }
 
-fn try_get_version(app: String, arg: &str) -> String {
+fn try_get_output(app: String, arg: &str) -> String {
 	let output = match Command::new(app)
 		.arg(arg)
 		.output() {
