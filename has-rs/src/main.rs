@@ -18,11 +18,13 @@ fn main() {
 			}
 		}
 	} else {
-		println!("has-rs v0.1.0\n\
+		println!("has-rs v0.1.1\n\
 		---------------------------------------------\n\
-		written by joedf\n\
-		released under the MIT License\n\
-		based on https://github.com/kdabir/has");
+		Written by Joachim de Fourestier (joedf)\n\
+		Released under the MIT License\n\
+		https://github.com/joedf/has-rs\n\
+		\n\
+		Based on https://github.com/kdabir/has");
 	}
 }
 
