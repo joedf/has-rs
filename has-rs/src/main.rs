@@ -4,7 +4,7 @@ use lazy_static::lazy_static;
 use regex::Regex;
 use which::which;
 
-// tested with: cargo run tere ls node npm nope git java rustc rustup cargo
+// tested with: cargo run tere ls node npm nope git java rustc rustup cargo non_existent gcc
 fn main() {
 	let args: Vec<String> = env::args().collect();
 	
