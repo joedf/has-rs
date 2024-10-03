@@ -4,12 +4,19 @@ use lazy_static::lazy_static;
 use regex::Regex;
 use which::which;
 
-// tested with: cargo run tere ls node npm nope git java rustc rustup cargo non_existent gcc
+static APP_VERSION: &str = "0.1.2";
+
+// tested with: cargo run tere ls node npm nope git java rustc rustup cargo non_existent gcc has-rs
 fn main() {
 	let args: Vec<String> = env::args().collect();
 	
 	if args.len() > 1 {
 		for app in args.iter().skip(1) {
+			if app == "--version" {
+				println!("{}", APP_VERSION);
+				break;
+			}
+
 			let v = get_version(app);
 			if v.len() > 0 {
 				println!("✔ {} {}", app, v);
@@ -18,13 +25,14 @@ fn main() {
 			}
 		}
 	} else {
-		println!("has-rs v0.1.1\n\
+		println!("has-rs v{}\n\
 		---------------------------------------------\n\
 		Written by Joachim de Fourestier (joedf)\n\
 		Released under the MIT License\n\
 		https://github.com/joedf/has-rs\n\
 		\n\
-		Based on https://github.com/kdabir/has");
+		Based on https://github.com/kdabir/has",
+		APP_VERSION);
 	}
 }
 

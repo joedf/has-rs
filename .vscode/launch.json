@@ -1,0 +1,37 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Cargo debug",
+			"cargo": {
+				"args": [
+					"build",
+					"--manifest-path",
+					"${workspaceFolder}/has-rs/Cargo.toml",
+				]
+			},
+			"args": []
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "run has-rs --version",
+			"program": "${workspaceFolder}/has-rs/target/debug/has-rs",
+			"args": ["--version"],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "run has-rs with itself",
+			"program": "${workspaceFolder}/has-rs/target/debug/has-rs",
+			"args": ["${workspaceFolder}/has-rs/target/debug/has-rs"],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
